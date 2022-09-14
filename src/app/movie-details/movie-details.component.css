@@ -1,0 +1,27 @@
+.poster{
+    height: 270px;
+    width: 198px;
+    border-radius: 35px;
+}
+
+.rent-btn{
+    color: var(--bs-purple);
+}
+.rent-btn:hover{
+    color: white;
+    background-color: var(--bs-purple);
+}
+
+.pills{
+    /* background-color: red; */
+    border: 2px solid #6C757D;
+box-sizing: border-box;
+border-radius: 16px;
+padding: 0px 10px;
+font-weight: 600;
+
+}
+
+.checked{
+    color: orange;
+}

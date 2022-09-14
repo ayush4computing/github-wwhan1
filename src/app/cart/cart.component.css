@@ -1,0 +1,83 @@
+.cart-item{
+    border: 1px solid #AFAFAF;
+    padding: 20px 5px;
+    border-radius: 10px;
+}
+.poster{
+    width: 147px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.m-name{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+color: #152536;
+}
+
+.year-dur-rat{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+color: #565656;
+}
+
+.checked{
+    color: orange;
+}
+
+.dis-price{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+color: #152536;
+}
+
+.org-price{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+text-decoration-line: line-through;
+color: #A0A0A0;
+}
+
+.rem-view{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+color: #7C7C7C;
+}
+
+.price-details{
+    border: 1px solid #AFAFAF;
+    padding: 20px 5px;
+    border-radius: 10px;
+    height: 30%;
+}
+
+.price-heading{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+color: #7A7A7A;
+}
+.hr-line{
+    width: 80%;
+    align-content: center;
+    text-align: center;
+}
+
+.price{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+color: #2D2D2D;
+}

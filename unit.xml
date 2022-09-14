@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 103.0.5060.53 (Windows 10)" package="unit" timestamp="2022-09-13T17:25:19" id="0" hostname="Manish" tests="5" errors="0" failures="0" time="0.528">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/103.0.5060.53 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent Display Movies on Movies Page" time="0.242" classname=".AppComponent"/>
+  <testcase name="AppComponent Movie not available" time="0.033" classname=".AppComponent"/>
+  <testcase name="AppComponent Cart to display movies" time="0.029" classname=".AppComponent"/>
+  <testcase name="AppComponent Movie Details Should display movie" time="0.155" classname=".AppComponent"/>
+  <testcase name="AppComponent On Click remove cart items decreases" time="0.069" classname=".AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

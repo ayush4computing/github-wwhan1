@@ -1,0 +1,67 @@
+<!-- <p>movie-details works!</p> -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="row">
+                <img class="poster" src="assets/poster.jpg">
+            </div>
+            <div class="row mt-4">
+                <button type="button" class="btn btn-outline-primary text-center" *ngIf = "!movie.inCart" style="width: 62%;" (click) = "addToCart(movie,1)">Buy $ {{movie.buyPrice}}</button>
+            </div>
+            <div class="row mt-4">
+                <button type="button" class="btn btn-outline rent-btn text-center"  *ngIf = "!movie.inCart" (click) = "addToCart(movie,2)" style="width: 62%; border-color: var(--bs-purple);">Rent $ {{movie.rentPrice}}</button>
+            </div>
+            <div class="row mt-4">
+                <button type="button" *ngIf = "movie.inCart" class="btn btn-outline-primary text-center" style="width: 62%;" routerLink="/cart">Go to cart</button>
+            </div>
+        </div>
+        <div class="col-9" style="border:1px solid #929292;box-sizing: border-box;
+        border-radius: 5px;">
+            <div class="row">
+                <!-- Movie Name -->
+                <div class="col"><p id="movie-name" style="font-family: 'Poppins'; font-size: 24px; color: #152536; font-weight: bold;">{{movie.name}}</p></div>
+                <!-- genre tags -->
+                <div class="col mt-1">
+                    <span class="pills mx-2" *ngFor = "let g of movie.genre">{{g}}</span>
+                    
+                </div>
+                
+            </div>
+            <!-- year duration and rating -->
+            <div class="row">
+                <p style="font-family: 'Poppins'; font-size: 15px; color: #152536; font-weight: 500;">{{movie.year}} • {{movie.length}}m • IMDb  &nbsp;
+                    <span class="fa fa-star checked"></span> &nbsp;  {{movie.rating}} / 10</p>
+                
+            </div>
+            <!-- description -->
+            <div class="row"><p style="width: 80%;">
+                {{movie.desc}}
+            </p></div>
+
+            <!-- directors -->
+            <div class="row">
+                <div class="col-3">
+                    <p style="font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #595959;">Directors :</p>
+                </div>
+                <div class="col-9" ><p *ngFor = "let director of movie.directors">{{director}}</p></div>
+            </div>
+            <!-- Top Cast -->
+            <div class="row">
+                <div class="col-3">
+                    <p style="font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #595959">Top Casts :</p>
+                </div>
+                <div class="col-9" ><p *ngFor = "let cast of movie.top_cast">{{cast}}</p></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.logo{
+    color: #C54C4C; 
+    font-size: 28px; 
+    padding-left: 20px; 
+    font-weight: 500;
+    font-family: 'Poppins', Courier, monospace;
+}
+
+
+
+.footer {
+    
+    height: 70px;
+    width: 100%;
+    background-color: #F4F4F4;
+}

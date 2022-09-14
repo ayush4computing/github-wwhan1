@@ -1,0 +1,50 @@
+<!-- <p>movie works!</p> -->
+<!-- <button class="btn btn-primary" routerLink="details"> Click me !</button> -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-4 mt-5 mb-5 movies" *ngFor = "let movie of movies;">
+            <div class="card" style="width: 18rem;">
+    
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-family: 'Poppins'; font-size: 28; font-weight: bold; color: #152536;">{{movie.name}}</h5>
+                  <div class="row" style="font-size: 15px; font-family: 'Poppins'; color: #565656; font-weight: 600;">
+                    <p class="text-center">{{movie.year}} • {{movie.length}}m </p>
+                  </div>
+                  <div class="row" style="font-size: 18px; font-family: 'Poppins';">
+                    <div class="col">
+                        <p>Director :  </p>
+                    </div>
+                    <div class="col"><p *ngFor = "let director of movie.directors">{{director}}</p></div>
+                  </div>
+                  <div class="row" style="font-size: 18px; font-family: 'Poppins';">
+                    <div class="col-7">
+                        <p>IMDb Rating :  </p>
+                    </div>
+                    <div class="col-5">
+                        <span class="fa fa-star checked"></span> {{movie.rating}} / 10
+                    </div>
+                  </div>
+
+                  <div class="row" style="font-size: 18px; font-family: 'Poppins';">
+                    <div class="col">
+                    <p>Top Cast :  </p>
+                    </div>
+                    <div class="col"><p *ngFor = "let cast of movie.top_cast">{{cast}}</p></div>
+                  </div>
+                  <div class="row text-center">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-outline-success" (click) = "viewDetails(movie.id)">View</button>
+                    </div>
+                        <div class="col-8">
+                            <button type="button" *ngIf = "movie.isAvailable && !movie.inCart" class="btn btn-outline-primary" (click) = "addToCart(movie)">Buy $ {{movie.buyPrice}}</button>
+                            <button type="button" *ngIf = "!movie.isAvailable" class="btn btn-secondary" id="not-available" disabled>Not Available</button>
+                            <button type="button" *ngIf = "movie.inCart" class="btn btn-primary" routerLink="cart">Go to cart</button>
+                        </div>
+                  </div>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col-8">
+            <div class="row cart-item mt-4" *ngFor = "let i of cartItem">
+                <div class="col-2">
+                    <!-- image -->
+                    <img class="poster" src="assets/poster.jpg">
+                </div>
+                <div class="col"></div>
+                <div class="col-9">
+                    <div class="row">
+                        <!-- movie name -->
+                        <p class="m-name">{{i.name}}</p>
+                    </div>
+                    <div class="row">
+                        <!-- year duration rating -->
+                        <p class="year-dur-rat">{{i.year}} • {{i.length}}m • IMDb &nbsp;<span class="fa fa-star checked"></span> &nbsp; {{i.rating}} / 10</p>
+                    </div>
+                    <div class="row">
+                        <!-- price detail -->
+                        <p class="dis-price"><span *ngIf = "i.transactType == 2">Rent : $ {{i.rentPrice}}</span><span *ngIf = "i.transactType == 1">Buy : $ {{i.buyPrice}}</span></p>
+                        
+                    </div>
+                    <div class="row">
+                        <!-- remove and view btn -->
+                        <p>
+                            <span class="rem-view" id="remove-item" (click) = "removeItem(i)" style="cursor: pointer;">Remove</span>
+                            <span class="rem-view mx-5" style="cursor: pointer;"(click)="viewDetails(i.id)">View</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3 price-details mt-4">
+            <div class="row">
+                <p class="price-heading text-center">Price Details</p>
+            </div>
+            <hr>
+            
+            <div class="row my-3">
+                <p class="price text-center">Total Amount <span style="color: #717171;">$ {{totalAmt}}</span></p>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

@@ -5,15 +5,15 @@ import { MovieService } from '../movie.service';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css']
+  styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
-
   curr_id: number = -1;
-  movie: Movie = {id: -1,
-    name:"",
-    desc: "",
-    directors:[],
+  movie: Movie = {
+    id: -1,
+    name: '',
+    desc: '',
+    directors: [],
     rating: 0,
     top_cast: [],
     genre: [],
@@ -23,27 +23,31 @@ export class MovieDetailsComponent implements OnInit {
     rentPrice: 0,
     buyPrice: 0,
     isAvailable: false,
-    inCart: false
+    inCart: false,
   };
 
   constructor(private movieService: MovieService) {
     this.curr_id = this.movieService.curr_movie;
-    this.movie = this.movieService.getMovies().find((m) => m.id == this.curr_id)!; 
-   }
-
-  ngOnInit(): void {
-    
+    this.movie = this.movieService
+      .getMovies()
+      .find((m) => m.id == this.curr_id)!;
   }
 
-  addToCart(movie: Movie, transType: number){
+  ngOnInit(): void {}
+
+  addToCart(movie: Movie, transType: number) {
+    // console.log(movie, transType);
+    // console.log(this.movieService.cartItem);
+
     this.movieService.cartItem.push(movie);
     let index = this.movieService.movies.findIndex((m) => m.id == movie.id);
-    
-    this.movieService.movies[index].inCart = true;
+
+    console.log(this.movieService.movies[index].inCart, index);
+
+    // this.movieService.movies[index].inCart = true;
     this.movieService.movies[index].transactType = transType;
     this.movie = this.movieService.movies[index];
 
     // console.log(this.movieService.cartItem);
-
   }
 }

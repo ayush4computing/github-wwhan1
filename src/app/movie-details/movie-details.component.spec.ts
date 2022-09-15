@@ -65,6 +65,7 @@ describe('MovieDetailsComponent', () => {
         rentPrice: 49,
         buyPrice: 59,
         isAvailable: true,
+        inCart: false,
       },
       {
         id: 3,
@@ -91,17 +92,46 @@ describe('MovieDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Display Movies on Movies Page', () => {
-    // component.selectedMembersCount = 0;
-
-    component.addToCart(movies[0], 1);
+  it('Add to cart button should add movies to cart', () => {
     const movieFixture = TestBed.createComponent(MovieDetailsComponent);
     const movieInstance = movieFixture.componentInstance;
-    // movieInstance.movies = movies;
+    movieInstance.addToCart(movies[0], 0);
     movieFixture.detectChanges();
+    expect(movieInstance.movie).toBeDefined();
+  });
+
+  it('Go to cart button should be visible when there is movie in cart', () => {
+    const movieFixture = TestBed.createComponent(MovieDetailsComponent);
+    const movieInstance = movieFixture.componentInstance;
+    movieInstance.addToCart(movies[0], 0);
+    movieFixture.detectChanges();
+    expect(movieInstance.movie).toBeDefined();
+
     expect(
-      movieFixture.debugElement.queryAll(By.css('.movies')).length
+      movieFixture.debugElement.queryAll(By.css('.go-to-cart-btn')).length
+    ).toEqual(1);
+  });
+
+  it('Go to cart button should not be visible when the cart is empty', () => {
+    const movieFixture = TestBed.createComponent(MovieDetailsComponent);
+    const movieInstance = movieFixture.componentInstance;
+    // movieInstance.addToCart(movies[0], 0);
+    movieFixture.detectChanges();
+    // expect(movieInstance.movie).toBeDefined();
+
+    expect(
+      movieFixture.debugElement.queryAll(By.css('.go-to-cart-btn')).length
     ).toEqual(0);
+  });
+
+  it('Movie Details Should display director name on movie details page', () => {
+    const movieDetailsFixture = TestBed.createComponent(MovieDetailsComponent);
+    const movieDetailsInstance = movieDetailsFixture.componentInstance;
+    movieDetailsInstance.movie = movies[0];
+    movieDetailsFixture.detectChanges();
+    expect(
+      movieDetailsFixture.debugElement.queryAll(By.css('.director-name')).length
+    ).toEqual(movies[0].directors.length);
   });
 
   // it('Display Movies on Movies Page', () => {

@@ -36,18 +36,10 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   addToCart(movie: Movie, transType: number) {
-    // console.log(movie, transType);
-    // console.log(this.movieService.cartItem);
-
     this.movieService.cartItem.push(movie);
     let index = this.movieService.movies.findIndex((m) => m.id == movie.id);
-
-    console.log(this.movieService.movies[index].inCart, index);
-
-    // this.movieService.movies[index].inCart = true;
+    this.movieService.movies[index].inCart = true;
     this.movieService.movies[index].transactType = transType;
     this.movie = this.movieService.movies[index];
-
-    // console.log(this.movieService.cartItem);
   }
 }

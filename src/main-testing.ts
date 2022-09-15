@@ -21,7 +21,7 @@ import {
 } from '@angular/platform-browser-dynamic/testing';
 
 // stuff to test
-import './app/movie-details/movie-details.component.spec.ts';
+import './app/movie/movie.component.spec.ts';
 
 jasmine.getEnv().configure({ random: false });
 bootstrap();

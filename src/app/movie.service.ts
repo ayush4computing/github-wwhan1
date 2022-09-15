@@ -40,6 +40,7 @@ export class MovieService {
       rentPrice: 39,
       buyPrice: 69,
       isAvailable: true,
+      inCart: false,
     },
 
     {
@@ -56,6 +57,7 @@ export class MovieService {
       rentPrice: 49,
       buyPrice: 59,
       isAvailable: true,
+      inCart: false,
     },
     {
       id: 3,
@@ -71,6 +73,7 @@ export class MovieService {
       rentPrice: 99,
       buyPrice: 129,
       isAvailable: false,
+      inCart: false,
     },
   ];
 
